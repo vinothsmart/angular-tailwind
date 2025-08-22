@@ -8,5 +8,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Angular Introduction';
+  title: string = 'Angular Introduction';
+  myBtn: string = 'Click Me';
+  // attribute binding
+  isDisabled: boolean = false;
 }
