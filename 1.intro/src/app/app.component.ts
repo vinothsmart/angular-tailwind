@@ -11,5 +11,5 @@ export class AppComponent {
   title: string = 'Angular Introduction';
   myBtn: string = 'Click Me';
   // attribute binding
-  isDisabled: boolean = false;
+  isDisabled: boolean = true;
 }
