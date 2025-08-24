@@ -12,4 +12,5 @@ export class AppComponent {
   myBtn: string = 'Click Me';
   // attribute binding
   isDisabled: boolean = true;
+  angularImage: string = 'https://picsum.photos/300/200?random=1';
 }
