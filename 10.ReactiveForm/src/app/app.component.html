@@ -2,30 +2,50 @@
 <form [formGroup]="userForm" (ngSubmit)="submitForm()" style="padding: 50px">
   <div>
     <label for="username">Username</label>
-    <input id="username" formControlName="name" placeholder="name" />
+    <input
+      id="username"
+      formControlName="name"
+      placeholder="name"
+      appShowInvalid
+    />
   </div>
   <div>
     <label for="email">Email</label>
-    <input id="email" formControlName="email" placeholder="email" />
+    <input
+      id="email"
+      formControlName="email"
+      placeholder="email"
+      appShowInvalid
+    />
   </div>
   <div formGroupName="address">
     <h3>Address</h3>
     <div>
       <label for="street">Street</label>
-      <input id="street" formControlName="street" placeholder="street" />
+      <input
+        id="street"
+        formControlName="street"
+        placeholder="street"
+        appShowInvalid
+      />
     </div>
     <div>
       <label for="city">City</label>
-      <input id="city" formControlName="city" placeholder="city" />
+      <input
+        id="city"
+        formControlName="city"
+        placeholder="city"
+        appShowInvalid
+      />
     </div>
     <div>
       <label for="zip">ZIP</label>
-      <input id="zip" formControlName="zip" placeholder="zip" />
+      <input id="zip" formControlName="zip" placeholder="zip" appShowInvalid />
     </div>
   </div>
   <div>
     <label for="age">Age</label>
-    <input id="age" formControlName="age" placeholder="age" />
+    <input id="age" formControlName="age" placeholder="age" appShowInvalid />
   </div>
   <div formArrayName="phoneNumbers">
     <h3>Phone Numbers</h3>
