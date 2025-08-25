@@ -27,5 +27,20 @@
     <label for="age">Age</label>
     <input id="age" formControlName="age" placeholder="age" />
   </div>
+  <div formArrayName="phoneNumbers">
+    <h3>Phone Numbers</h3>
+    <div *ngFor="let phone of phoneNumbers.controls; let i = index">
+      <label for="phone-{{ i }}">Phone {{ i + 1 }}</label>
+      <input
+        id="phone-{{ i }}"
+        [formControlName]="i"
+        placeholder="phone number"
+      />
+      <button type="button" (click)="removePhoneNumber(i)">Remove</button>
+    </div>
+  </div>
+  <div>
+    <button type="button" (click)="addPhoneNumber()">Add Phone Number</button>
+  </div>
   <button type="submit" [disabled]="!userForm.valid">Submit</button>
 </form>

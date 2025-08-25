@@ -33,10 +33,33 @@ export class AppComponent {
       address: this.fb.group({
         street: ['', Validators.required],
         city: ['', Validators.required],
-        zip: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
+        zip: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
       }),
       age: ['', [Validators.required, Validators.min(0)]],
+      phoneNumbers: this.fb.array([
+        this.fb.control('', [
+          Validators.required,
+          Validators.pattern('^[0-9]{10}$'),
+        ]),
+      ]),
     });
+  }
+
+  get phoneNumbers(): FormArray {
+    return this.userForm.get('phoneNumbers') as FormArray;
+  }
+
+  addPhoneNumber() {
+    this.phoneNumbers.push(
+      this.fb.control('', [
+        Validators.required,
+        Validators.pattern('^[0-9]{10}$'),
+      ])
+    );
+  }
+
+  removePhoneNumber(index: number) {
+    this.phoneNumbers.removeAt(index);
   }
 
   submitForm() {
