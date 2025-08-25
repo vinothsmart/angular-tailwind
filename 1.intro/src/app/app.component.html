@@ -8,3 +8,9 @@ Hello {{ title }}
 </div>
 
 <h2 [class.textColor]="redText == 'abcd'">Title</h2>
+
+<button (click)="incrementCounter()">Increment</button>
+<p>You entered: {{ counter }}</p>
+
+<input [(ngModel)]="inputText" placeholder="Enter some text" />
+<p>You entered: {{ inputText }}</p>

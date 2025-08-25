@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title: string = 'Angular Introduction';
   myBtn: string = 'Click Me';
+  counter: number = 0;
+
   // attribute binding
   isDisabled: boolean = true;
   angularImage: string = 'https://picsum.photos/300/200?random=1';
@@ -21,4 +25,10 @@ export class AppComponent {
 
   //class binding
   redText: string = 'abc';
+
+  incrementCounter() {
+    this.counter++;
+  }
+
+  inputText: string = 'Initial Value';
 }
