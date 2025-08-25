@@ -14,10 +14,11 @@ import {
   phoneNumberValidator,
   zipCodeValidator,
 } from './custom.validators';
+import { ShowInvalidDirective } from './show-invalid.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ShowInvalidDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
