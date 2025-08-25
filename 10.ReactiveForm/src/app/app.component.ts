@@ -5,9 +5,15 @@ import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import {
+  ageValidator,
+  customRequiredValidator,
+  emailValidator,
+  phoneNumberValidator,
+  zipCodeValidator,
+} from './custom.validators';
 
 @Component({
   selector: 'app-root',
@@ -20,27 +26,16 @@ export class AppComponent {
 
   constructor(private fb: FormBuilder) {
     this.userForm = this.fb.group({
-      name: ['', Validators.required],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
-          ),
-        ],
-      ],
+      name: ['', customRequiredValidator],
+      email: ['', [customRequiredValidator, emailValidator]],
       address: this.fb.group({
-        street: ['', Validators.required],
-        city: ['', Validators.required],
-        zip: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
+        street: ['', customRequiredValidator],
+        city: ['', customRequiredValidator],
+        zip: ['', [customRequiredValidator, zipCodeValidator]],
       }),
-      age: ['', [Validators.required, Validators.min(0)]],
+      age: ['', [customRequiredValidator, ageValidator]],
       phoneNumbers: this.fb.array([
-        this.fb.control('', [
-          Validators.required,
-          Validators.pattern('^[0-9]{10}$'),
-        ]),
+        this.fb.control('', [customRequiredValidator, phoneNumberValidator]),
       ]),
     });
   }
@@ -51,10 +46,7 @@ export class AppComponent {
 
   addPhoneNumber() {
     this.phoneNumbers.push(
-      this.fb.control('', [
-        Validators.required,
-        Validators.pattern('^[0-9]{10}$'),
-      ])
+      this.fb.control('', [customRequiredValidator, phoneNumberValidator])
     );
   }
 
