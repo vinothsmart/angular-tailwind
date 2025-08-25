@@ -18,4 +18,7 @@ export class AppComponent {
   bgColor: string = 'lightblue';
   titleColor: string = 'darkblue';
   description: string = 'font-size:50px; color: gray;';
+
+  //class binding
+  redText: string = 'abc';
 }
