@@ -16,3 +16,7 @@ Hello {{ title }}
 <p>You entered: {{ inputText }}</p>
 
 <div [ngClass]="classes">{{ message }}</div>
+
+<div class="color-box" [ngStyle]="{ 'background-color': selectedColor }">
+  Box
+</div>

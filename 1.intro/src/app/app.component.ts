@@ -35,4 +35,7 @@ export class AppComponent {
   //ngClass
   message: string = 'this is a message';
   classes: string = 'danger text-style';
+
+  //ngStyle
+  selectedColor: string = 'red';
 }
