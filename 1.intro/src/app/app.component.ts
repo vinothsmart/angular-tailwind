@@ -31,4 +31,8 @@ export class AppComponent {
   }
 
   inputText: string = 'Initial Value';
+
+  //ngClass
+  message: string = 'this is a message';
+  classes: string = 'danger text-style';
 }
