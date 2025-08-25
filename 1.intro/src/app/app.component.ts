@@ -13,4 +13,9 @@ export class AppComponent {
   // attribute binding
   isDisabled: boolean = true;
   angularImage: string = 'https://picsum.photos/300/200?random=1';
+
+  // style binding
+  bgColor: string = 'lightblue';
+  titleColor: string = 'darkblue';
+  description: string = 'font-size:50px; color: gray;';
 }

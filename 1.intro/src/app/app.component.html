@@ -1,3 +1,8 @@
 Hello {{ title }}
 <button [disabled]="isDisabled" type="button">{{ myBtn }}</button>
 <img [src]="angularImage" width="100" height="100" alt="Description of image" />
+
+<div [style.backgroundColor]="bgColor">
+  <h2 [style.color]="titleColor">{{ title }}</h2>
+  <p [style]="description">This is a paragraph with a background color.</p>
+</div>
