@@ -35,8 +35,8 @@ interface User {
 })
 export class AppComponent {
   userForm!: FormGroup;
-
   users: User[] = [];
+  editingIndex: number | null = null; // Track which user is being edited
 
   constructor(private fb: FormBuilder) {
     this.userForm = this.fb.group({
@@ -70,14 +70,52 @@ export class AppComponent {
 
   submitForm() {
     if (this.userForm.valid) {
-      // console.log(this.userForm.value);
-      this.users.push(this.userForm.value);
-      this.userForm.reset();
-      this.phoneNumbers.clear();
+      const formValue = this.userForm.value as User;
+
+      if (this.editingIndex !== null) {
+        // Update existing user
+        this.users[this.editingIndex] = formValue;
+      } else {
+        // Add new user
+        this.users.push(formValue);
+      }
+
+      this.resetForm();
     }
+  }
+
+  private resetForm() {
+    this.userForm.reset();
+    this.phoneNumbers.clear();
+    this.phoneNumbers.push(
+      this.fb.control('', [customRequiredValidator, phoneNumberValidator])
+    );
+    this.editingIndex = null;
+  }
+
+  editUser(user: User, index: number) {
+    this.editingIndex = index;
+    this.userForm.patchValue(user);
+    this.phoneNumbers.clear();
+    user.phoneNumbers.forEach((phone) => {
+      this.phoneNumbers.push(
+        this.fb.control(phone, [customRequiredValidator, phoneNumberValidator])
+      );
+    });
+  }
+
+  cancelEdit() {
+    this.resetForm();
   }
 
   deleteUser(index: number) {
     this.users.splice(index, 1);
+    // If we're editing the deleted user, reset the form
+    if (this.editingIndex === index) {
+      this.resetForm();
+    } else if (this.editingIndex !== null && index < this.editingIndex) {
+      // Adjust editing index if a user before the current edit was deleted
+      this.editingIndex--;
+    }
   }
 }

@@ -63,7 +63,12 @@
   <div>
     <button type="button" (click)="addPhoneNumber()">Add Phone Number</button>
   </div>
-  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  <button type="submit" [disabled]="!userForm.valid">
+    {{ editingIndex !== null ? "Update User" : "Add User" }}
+  </button>
+  <button type="button" *ngIf="editingIndex !== null" (click)="cancelEdit()">
+    Cancel Edit
+  </button>
 </form>
 <hr />
 
@@ -90,6 +95,7 @@
       <td>{{ user.age }}</td>
       <td>{{ user.phoneNumbers.join(", ") }}</td>
       <td>
+        <button (click)="editUser(user, i)">Edit</button>
         <button (click)="deleteUser(i)">Delete</button>
       </td>
     </tr>
