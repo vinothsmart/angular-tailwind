@@ -55,6 +55,7 @@
         id="phone-{{ i }}"
         [formControlName]="i"
         placeholder="phone number"
+        appShowInvalid
       />
       <button type="button" (click)="removePhoneNumber(i)">Remove</button>
     </div>

@@ -18,7 +18,12 @@ import { ShowInvalidDirective } from './show-invalid.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule, CommonModule, ShowInvalidDirective],
+  imports: [
+    RouterOutlet,
+    ReactiveFormsModule,
+    CommonModule,
+    ShowInvalidDirective,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
