@@ -1,5 +1,10 @@
 .is-invalid {
-  border-color: #dc3545;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #10b981;
 }
 /* Add some spacing below the form */
 form {
