@@ -76,4 +76,8 @@ export class AppComponent {
       this.phoneNumbers.clear();
     }
   }
+
+  deleteUser(index: number) {
+    this.users.splice(index, 1);
+  }
 }
