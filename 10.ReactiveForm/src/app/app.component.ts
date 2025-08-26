@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import {
   FormArray,
   FormBuilder,
@@ -16,19 +15,28 @@ import {
 } from './custom.validators';
 import { ShowInvalidDirective } from './show-invalid.directive';
 
+interface User {
+  name: string;
+  email: string;
+  address: {
+    street: string;
+    city: string;
+    zip: string;
+  };
+  age: number;
+  phoneNumbers: string[];
+}
+
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    ReactiveFormsModule,
-    CommonModule,
-    ShowInvalidDirective,
-  ],
+  imports: [ReactiveFormsModule, CommonModule, ShowInvalidDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   userForm!: FormGroup;
+
+  users: User[] = [];
 
   constructor(private fb: FormBuilder) {
     this.userForm = this.fb.group({
@@ -62,7 +70,10 @@ export class AppComponent {
 
   submitForm() {
     if (this.userForm.valid) {
-      console.log(this.userForm.value);
+      // console.log(this.userForm.value);
+      this.users.push(this.userForm.value);
+      this.userForm.reset();
+      this.phoneNumbers.clear();
     }
   }
 }
