@@ -27,17 +27,11 @@ export class ShowInvalidDirective implements OnInit, OnDestroy {
     this.statusChangesSubscription.unsubscribe();
   }
 
-  // // Listen for the 'blur' event, which occurs when a user leaves the input field.
-  // @HostListener('blur')
-  // onBlur() {
-  //   this.updateClass();
-  // }
-
-  // // Listen for the 'input' event, which fires on every keystroke.
-  // @HostListener('input')
-  // onInput() {
-  //   this.updateClass();
-  // }
+  // Listen for the 'blur' event, which occurs when a user leaves the input field.
+  @HostListener('blur')
+  onBlur() {
+    this.updateClass();
+  }
 
   private updateClass() {
     // Check if the control is invalid AND has been interacted with (dirty or touched).
