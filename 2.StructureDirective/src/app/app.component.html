@@ -14,3 +14,10 @@
 <ul>
   <li *ngFor="let name of names; let i = index">{{ i + 1 }}. {{ name }}</li>
 </ul>
+
+<div [ngSwitch]="grade">
+  <p *ngSwitchCase="'A'">Excellent</p>
+  <p *ngSwitchCase="'B'">Good</p>
+  <p *ngSwitchCase="'C'">Bad</p>
+  <p *ngSwitchDefault>Unknown</p>
+</div>

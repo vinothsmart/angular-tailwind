@@ -15,4 +15,6 @@ export class AppComponent {
   userName: string = 'John Doe';
 
   names: string[] = ['John', 'Jane', 'Doe'];
+
+  grade: string = 'C';
 }
