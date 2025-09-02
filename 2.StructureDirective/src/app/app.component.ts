@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Structure Directives';
 
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
   check: boolean = false;
   userName: string = 'John Doe';
 }
