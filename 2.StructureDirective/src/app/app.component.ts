@@ -13,4 +13,6 @@ export class AppComponent {
   isLoggedIn: boolean = false;
   check: boolean = false;
   userName: string = 'John Doe';
+
+  names: string[] = ['John', 'Jane', 'Doe'];
 }
