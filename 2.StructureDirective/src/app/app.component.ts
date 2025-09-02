@@ -11,5 +11,6 @@ export class AppComponent {
   title = 'Structure Directives';
 
   isLoggedIn: boolean = false;
+  check: boolean = false;
   userName: string = 'John Doe';
 }
