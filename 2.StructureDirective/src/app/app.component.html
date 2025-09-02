@@ -5,3 +5,8 @@
 
 <div *ngIf="isLoggedIn && check">You are logged in</div>
 <div *ngIf="isLoggedIn || check">You are logged in</div>
+
+<div *ngIf="isLoggedIn; else loggedOut">Welcome back, {{ userName }}</div>
+<ng-template #loggedOut>
+  <div>Please log.</div>
+</ng-template>
