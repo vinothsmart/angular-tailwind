@@ -12,5 +12,5 @@
 </ng-template>
 
 <ul>
-  <li *ngFor="let name of names">{{ name }}</li>
+  <li *ngFor="let name of names; let i = index">{{ i + 1 }}. {{ name }}</li>
 </ul>
