@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '4.Pipes';
-  today = new Date();
+  today: number = Date.now();
 }

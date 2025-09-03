@@ -1,2 +1,11 @@
 <h1>{{ title | lowercase }}</h1>
 <h1>{{ title | uppercase }}</h1>
+
+<div>Today is {{ today }}</div>
+<div>Today is {{ today | date }}</div>
+<div>Today is {{ today | date : "fullDate" | uppercase }}</div>
+<div>Today is {{ today | date : "short" }}</div>
+<div>Today is {{ today | date : "medium" }}</div>
+<div>Today is {{ today | date : "long" }}</div>
+<div>Today is {{ today | date : "full" }}</div>
+<div>Today is {{ today | date : "h:mm:s" }}</div>
