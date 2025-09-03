@@ -27,4 +27,6 @@ export class AppComponent {
       name: 'Item 3',
     },
   ];
+
+  grade: String = 'C';
 }

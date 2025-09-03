@@ -8,7 +8,10 @@
 {{ a }} is equal to {{ b }}
 }  -->
 
-@for(item of items; track item.id; let i = $index; let total = $count; ) {
-{{ i }} - {{ item.name }} ({{ total }}) }
+<!-- @for(item of items; track item.id; let i = $index; let total = $count; ) {
+{{ i }} - {{ item.name }} ({{ total }}) } -->
 
 <!-- $first, $last, $even, $odd -->
+
+@switch ( grade ) { @case('A') { You got an A! } @case('B') { You got a B! }
+@case('C') { You got a C! } @default { Unknown grade } }
