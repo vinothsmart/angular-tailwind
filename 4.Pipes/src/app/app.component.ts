@@ -10,4 +10,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '4.Pipes';
   today: number = Date.now();
+  currency = '1.234533333';
 }
