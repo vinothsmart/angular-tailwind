@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'append'
+  name: 'append',
 })
 export class AppendPipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string, appendText: string): string {
+    if (value === null || value === undefined) {
+      return '';
+    }
+    return value + appendText;
   }
-
 }

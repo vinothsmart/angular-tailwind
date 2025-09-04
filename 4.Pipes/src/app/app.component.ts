@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { AppendPipe } from './pipes/append.pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, AppendPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
