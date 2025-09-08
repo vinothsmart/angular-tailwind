@@ -1,0 +1,33 @@
+@if (users.length !== 0) {
+<h2>User List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Age</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users; track user) {
+    <tr>
+      <td>{{ user.name | titlecase }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.date }}</td>
+      <!-- Use [ngClass] to apply the active or inactive class based on the user.status -->
+      <td
+        [ngClass]="{
+          'active-user': user.status === 'active',
+          'inactive-user': user.status === 'inactive'
+        }"
+      >
+        {{ user.status }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
