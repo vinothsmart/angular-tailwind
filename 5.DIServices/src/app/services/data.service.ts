@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Data } from '../interfaces/data';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class DataService {
     return ['Data 1', 'Data 2', 'Data 3'];
   }
 
-  getPosts(): Observable<any> {
-    return this.http.get(this.apiURL);
+  getPosts(): Observable<Data[]> {
+    return this.http.get<Data[]>(this.apiURL);
   }
 }
