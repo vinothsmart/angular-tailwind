@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  constructor() {}
 
-  constructor() { }
+  getUser(): Observable<any> {
+    return of({ name: 'John Doe', email: 'john.doe@example.com' });
+  }
 }
