@@ -13,4 +13,14 @@ export class AppComponent {
   constructor(private userService: UserService) {
     this.user = this.userService.getUser();
   }
+
+  userData = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    roles: ['admin', 'user'],
+    status: {
+      active: true,
+      loginTime: new Date(),
+    },
+  };
 }
