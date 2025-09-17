@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { Todo } from './interfaces/todo';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

@@ -1,0 +1,9 @@
+<input type="text" [value]="newTodo()" (input)="handleInput($event)" />
+<button (click)="addTodo()">Add Todo</button>
+
+<ul>
+  <li *ngFor="let todo of todos()">
+    {{ todo.text }}
+    <button (click)="deleteTodo(todo.id)">Remove</button>
+  </li>
+</ul>
